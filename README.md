@@ -111,11 +111,7 @@ Your feedback, suggestions, and contributions help make this project stronger. F
 
 ---
 
-## License
 
-This project is licensed under the MIT License — free as in freedom to use, modify, and share.
-
----
 
 Ready to defend your cloud like a pro? Dive in and automate your security incident response today!
 
