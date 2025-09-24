@@ -56,3 +56,66 @@ The magic happens when AWS CloudTrail and CloudWatch team up to constantly monit
 - AWS CLI installed and configured
 - AWS account with appropriate permissions
 - Python 3.x installed (if using Python Lambda functions)
+
+### Deployment Options
+
+1. **CloudFormation Template**  
+   Use the provided CloudFormation YAML file to deploy the entire stack with a single command:
+
+
+2. **Manual Setup**  
+- Enable CloudTrail in your AWS account  
+- Create CloudWatch log groups and metrics filters  
+- Deploy Lambda functions and configure triggers  
+- Setup SNS topics and subscriptions for notifications  
+(Check `/docs/setup-guide.md` for step-by-step instructions.)
+
+---
+
+## Using the System
+
+Once deployed, the system automatically begins monitoring your AWS environment. You can test incident responses by simulating security events (e.g., unauthorized API calls). Watch as Lambda executes remediation steps instantly and notifications fly out to your security team.
+
+---
+
+## Peek Under the Hood: Code Overview
+
+Each Lambda function corresponds to a specific security incident type, for example:
+
+- `unauthorized-access-handler`: Reacts to unauthorized access attempts and revokes suspicious session tokens.
+- `network-anomaly-handler`: Detects unusual network behavior and isolates affected resources.
+- `log-cleanup-handler`: Manages log retention policies to maintain optimal performance and storage.
+
+Code is modular, well-commented, and designed for easy customization!
+
+---
+
+## Security Considerations
+
+This system follows **least privilege** principles—every component only has the minimum permissions it needs to operate. Sensitive data is never exposed, and logging ensures full forensic visibility. Adjust IAM roles and policies to fit your organization’s security standards.
+
+---
+
+## What’s Next?
+
+- Add AI-driven anomaly detection to anticipate threats before they hit
+- Integrate with third-party SIEM tools for centralized monitoring
+- Create dashboards for visualizing ongoing security posture
+- Extend automation to multi-cloud environments
+
+---
+
+## Join the Adventure!
+
+Your feedback, suggestions, and contributions help make this project stronger. Feel free to fork, open issues, or submit pull requests!
+
+---
+
+## License
+
+This project is licensed under the MIT License — free as in freedom to use, modify, and share.
+
+---
+
+Ready to defend your cloud like a pro? Dive in and automate your security incident response today!
+
